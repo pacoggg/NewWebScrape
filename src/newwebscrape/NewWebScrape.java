@@ -9,6 +9,8 @@ import com.opencsv.CSVWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.Elements;
@@ -21,11 +23,15 @@ public class NewWebScrape {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
-        // TODO code application logic here
-        String url=url();
-        Element documento=scrape(url);
-        paginas (documento);
+    public static void main(String[] args) {
+        try {
+            // TODO code application logic here
+            String url=url();
+            Element documento=scrape(url);
+            paginas (documento);
+        } catch (IOException ex) {
+            Logger.getLogger(NewWebScrape.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     public static String url(){
