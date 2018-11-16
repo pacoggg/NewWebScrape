@@ -58,6 +58,6 @@ public class NewWebScrape {
     public static void EscribirCVS() throws IOException {
         String archCSV = "E:\\nuevo.csv";
         CSVWriter writer = new CSVWriter(new FileWriter(archCSV));
-        writer.close();
+        writer.close();// comentario
     }
 }
